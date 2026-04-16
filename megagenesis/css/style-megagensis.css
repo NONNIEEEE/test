@@ -196,6 +196,115 @@
      flex: 1;
  }
 
+ .about-hero {
+     text-align: center;
+     padding: 100px 20px 40px;
+ }
+
+ .about-hero h1 {
+     font-size: clamp(40px, 8vw, 72px);
+     margin-bottom: 18px;
+ }
+
+ .about-hero h1 span {
+     color: var(--primary-color);
+ }
+
+ .about-hero p {
+     max-width: 760px;
+     margin: 0 auto;
+     color: var(--text-muted);
+     line-height: 1.8;
+     font-size: 1rem;
+ }
+
+ .about-section {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 40px;
+     align-items: center;
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 40px 20px;
+ }
+
+ .about-text h2 {
+     font-size: clamp(32px, 5vw, 44px);
+     margin-bottom: 20px;
+     color: var(--primary-color);
+ }
+
+ .about-text p {
+     margin-bottom: 20px;
+     color: var(--text-muted);
+     line-height: 1.8;
+ }
+
+ .about-image img {
+     width: 100%;
+     height: auto;
+     border-radius: 20px;
+     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+ }
+
+ .values-header {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 20px;
+     text-align: center;
+     margin-top: 40px;
+ }
+
+ .values-header h2 {
+     font-size: clamp(32px, 5vw, 44px);
+     margin-bottom: 15px;
+ }
+
+ .values-grid {
+     max-width: 1200px;
+     margin: 0 auto 60px;
+     padding: 0 20px;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+     gap: 25px;
+ }
+
+ .value-card {
+     background: var(--card-bg);
+     border-radius: 20px;
+     padding: 30px;
+     border: 1px solid rgba(255,255,255,0.05);
+     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+     transition: transform 0.3s ease;
+ }
+
+ .value-card:hover {
+     transform: translateY(-6px);
+ }
+
+ .value-icon {
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     background: rgba(255,255,255,0.05);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 28px;
+     margin-bottom: 18px;
+ }
+
+ .value-card h3 {
+     font-size: 20px;
+     margin-bottom: 15px;
+     color: var(--text-main);
+ }
+
+ .value-card p {
+     color: var(--text-muted);
+     line-height: 1.8;
+ }
+
  .hero {
      height: 60vh;
      margin-top: 60px;
@@ -374,6 +483,85 @@
      border-top: 1px solid rgba(255, 255, 255, 0.05);
      color: var(--text-muted);
      font-size: 14px;
+ }
+
+ .footer-dropdown {
+     position: relative;
+     display: inline-block;
+     margin-top: 15px;
+ }
+
+ .footer-dropbtn {
+     background-color: rgba(255, 0, 0, 0.1);
+     color: var(--primary-color);
+     border: 1px solid var(--primary-color);
+     padding: 12px 20px;
+     font-size: 15px;
+     font-weight: bold;
+     border-radius: 8px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     transition: 0.3s ease;
+     width: 100%;
+     justify-content: space-between;
+ }
+
+ .footer-dropbtn:hover {
+     background-color: var(--primary-color);
+     color: #fff;
+     transform: translateY(-2px);
+ }
+
+ .footer-drop-content {
+     display: none;
+     position: absolute;
+     bottom: calc(100% + 10px);
+     left: 0;
+     background-color: var(--card-bg);
+     min-width: 280px;
+     box-shadow: 0px -8px 25px rgba(0, 0, 0, 0.7);
+     border: 1px solid rgba(255, 0, 0, 0.3);
+     border-radius: 10px;
+     z-index: 10;
+     overflow: hidden;
+ }
+
+ .footer-drop-content a {
+     color: var(--text-main);
+     padding: 14px 20px;
+     text-decoration: none;
+     display: block;
+     font-size: 15px;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+     transition: 0.3s ease;
+ }
+
+ .footer-drop-content a:last-child {
+     border-bottom: none;
+ }
+
+ .footer-drop-content a:hover {
+     background-color: rgba(255, 0, 0, 0.2);
+     color: var(--primary-color);
+     padding-left: 25px;
+ }
+
+ .footer-drop-content.show-menu {
+     display: block;
+     animation: fadeUpDrop 0.3s ease;
+ }
+
+ @keyframes fadeUpDrop {
+     from {
+         opacity: 0;
+         transform: translateY(10px);
+     }
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
  }
 
  /* =========================================

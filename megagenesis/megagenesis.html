@@ -21,7 +21,7 @@
 
         <ul class="nav-menu">
             <li><a href="megagenesis.html">Home</a></li>
-            <li><a href="#">About me</a></li>
+            <li><a href="about-us.html">About Me</a></li>
             <li class="dropdown">
                 <a href="#">Product ▾</a>
                 <ul class="dropdown-content">
@@ -65,6 +65,18 @@
             <div class="footer-col">
                 <h4>MEGA<span>GENESIS</span></h4>
                 <p>อาณาจักรป้ายครบวงจร ระยอง ให้บริการครอบคลุมทั้งงานพิมพ์ งานป้ายโฆษณา และป้ายความปลอดภัยในโรงงานอุตสาหกรรม</p>
+                <div class="footer-dropdown">
+                    <button class="footer-dropbtn" onclick="toggleFooterMenu(event)">
+                        เลือกดูสินค้า <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <div class="footer-drop-content" id="footerProductMenu">
+                        <a href="product1.html">1. สื่อสิ่งพิมพ์ / สติ๊กเกอร์</a>
+                        <a href="product2.html">2. ป้ายไวนิล / อิงค์เจ็ท / บิลบอร์ด</a>
+                        <a href="product3.html">3. ป้ายเซฟตี้ / อะคริลิค / พลาสวูด</a>
+                        <a href="product4.html">4. งานสแตนเลส / ป้ายเนมเพลท</a>
+                        <a href="product5.html">5. สแตนดี้ (Feature Board)</a>
+                    </div>
+                </div>
             </div>
             <div class="footer-col">
                 <h4>Services</h4>
@@ -75,6 +87,7 @@
                     <li><a href="#">งานสแตนเลส / กัดกรด</a></li>
                 </ul>
             </div>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
             <div class="footer-col">
                 <h4>Get in Touch</h4>
                 <p>📍 87/7 ถ.วัดมาบตาพุด ต.มาบตาพุด อ.เมืองระยอง จ.ระยอง 21150</p>
@@ -91,5 +104,19 @@
             <p>&copy; 2026 MEGA GENESIS GRAPHIC DESIGN. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        function toggleFooterMenu(event) {
+            event.stopPropagation();
+            document.getElementById('footerProductMenu').classList.toggle('show-menu');
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.footer-dropbtn') && !event.target.closest('.footer-dropbtn')) {
+                var dropdown = document.getElementById('footerProductMenu');
+                if (dropdown && dropdown.classList.contains('show-menu')) {
+                    dropdown.classList.remove('show-menu');
+                }
+            }
+        }
+    </script>
 </body>
 </html>

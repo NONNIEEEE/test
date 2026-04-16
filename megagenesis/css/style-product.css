@@ -20,7 +20,9 @@
 }
 
 body { 
-    background-color: var(--bg-color); 
+    background: linear-gradient(to bottom, rgba(99, 68, 47, 0.8), var(--bg-color)),
+                url('../images-megagensis/logo_gen.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: var(--text-main); 
     overflow-x: hidden; 
     display: flex; 

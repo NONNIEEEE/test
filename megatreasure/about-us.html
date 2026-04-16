@@ -16,7 +16,7 @@
         <div class="header-left">
             <a href="../index.html" class="back-to-main" title="กลับหน้าหลัก">🏠</a>
 
-            <a href="megagenesis.html" class="logo">
+            <a href="megatreasure.html" class="logo">
                 <img src="images-megatreasure/Logo-megatr.png" alt="Logo">
             </a>
         </div>
@@ -103,23 +103,38 @@
                 <h4>MEGA<span>TREASURE</span></h4>
                 <p>Mega Treasure Corporation ศูนย์รวมอุปกรณ์สายรัดเคเบิ้ลไทร์สแตนเลส 316
                     และป้ายอุตสาหกรรมที่ตอบโจทย์ทุกความต้องการของโรงงานคุณ</p>
+                
+                <div class="footer-dropdown">
+                    <button class="footer-dropbtn" onclick="toggleFooterMenu(event)">
+                        เลือกดูสินค้า <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <div class="footer-drop-content" id="footerProductMenu">
+                        <a href="product1.html">Stainless Steel 316 Cable Ties</a>
+                        <a href="product2.html">Ball Lock Type Ties</a>
+                        <a href="product3.html">PVC / Epoxy Coated</a>
+                        <a href="product4.html">UV Proof Cable Ties</a>
+                        <a href="product5.html">Traffolyte & Mega Lok</a>
+                    </div>
+                </div>
             </div>
+
             <div class="footer-col">
-                <h4>Products</h4>
-                <p>• <a href="product1.html" style="color:var(--text-muted); text-decoration:none;">Stainless Steel 316
-                        Cable Ties</a><br>
-                    • <a href="product2.html" style="color:var(--text-muted); text-decoration:none;">Ball Lock Type
-                        Ties</a><br>
-                    • <a href="product3.html" style="color:var(--text-muted); text-decoration:none;">PVC / Epoxy
-                        Coated</a><br>
-                    • <a href="product5.html" style="color:var(--text-muted); text-decoration:none;">Traffolyte Tags &
-                        Mega Lok</a></p>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="megatreasure.html">Home</a></li>
+                    <li><a href="about-us.html">About Me</a></li>
+                    <li><a href="product1.html">All Product</a></li>
+                    <li><a href="contact-megatreasure.html">Contact Support</a></li>
+                </ul>
             </div>
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
             <div class="footer-col">
                 <h4>Get in Touch</h4>
-                <p>📍 87/7 ถ.วัดมาบตาพุด ต.มาบตาพุด อ.เมืองระยอง จ.ระยอง 21150</p>
-                <p>📞 Tel: 064-5644453</p>
-                <p>💬 LINE: mega.gd</p>
+                <p><i class="fa-solid fa-location-dot"></i> 87/7 ถ.วัดมาบตาพุด ต.มาบตาพุด อ.เมืองระยอง จ.ระยอง 21150</p>
+                <p><i class="fa-solid fa-phone"></i> Tel: 064-5644453</p>
+                <p><i class="fa-brands fa-line"></i> LINE: mega.gd</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -127,6 +142,23 @@
         </div>
     </footer>
 
+<script>
+    function toggleFooterMenu(event) {
+        event.stopPropagation();
+        const dropdown = document.getElementById('footerProductMenu');
+        if (dropdown) {
+            dropdown.classList.toggle('show-menu');
+        }
+    }
+
+    document.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('footerProductMenu');
+        if (!dropdown) return;
+        if (!event.target.closest('.footer-dropdown')) {
+            dropdown.classList.remove('show-menu');
+        }
+    });
+</script>
 </body>
 
 </html>
