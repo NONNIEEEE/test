@@ -94,7 +94,7 @@ body {
     color: #fff;
     text-shadow: 0 5px 25px rgba(0, 0, 0, 0.9);
     transform: translate(0, -50%);
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Kanit', sans-serif;
     display: none;
     pointer-events: none;
 }
