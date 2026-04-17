@@ -3,107 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - MeGaLok</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Contact Us</title>
+
+    <!-- Font + Icon -->
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style-megalok.css">
     <link rel="stylesheet" href="css/style-contact.css">
 </head>
+
 <body>
-   <header>
-        <div class="header-left">
-            <a href="../index.html" class="back-to-main" title="กลับหน้าหลัก (Main Index)"><i class="fa-solid fa-home"></i></a>
-            <a href="megalok.html" class="logo"><img src="../images/Megalok_logo.png" alt="MEGALOK"></a>
-        </div>
-        
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">☰</label>
 
-        <ul class="nav-menu">
-            <li><a href="megalok.html">Home</a></li>
-            <li><a href="about-us.html">About Me</a></li>
-            <li class="dropdown">
-                <a href="#">Products ▾</a>
-                <ul class="dropdown-content">
-                    <li><a href="product1.html">1. สายรัดสแตนเลส</a></li>
-                    <li><a href="product2.html">2. เคเบิ้ลไทร์ไนลอน</a></li>
-                    <li><a href="product3.html">3. อุปกรณ์เครื่องมือ</a></li>
-                    <li><a href="product4.html">4. สายรัดพลาสติก</a></li>
-                    <li><a href="product5.html">5. อุปกรณ์เสริมอื่นๆ</a></li>
-                </ul>
-            </li>
-            <li><a href="contact-megalok.html">Contact</a></li>
-        </ul>
-    </header>
+<header>
+    <div class="header-left">
+        <a href="../index.html" class="back-to-main"><i class="fa-solid fa-home"></i></a>
+        <a href="megalok.html" class="logo">
+            <img src="../images/Megalok_logo.png" alt="MEGALOK">
+        </a>
+    </div>
 
-    <main>
-        <section class="page-header">
-            <h1>Contact <span>Us</span></h1>
-            <p>สอบถามข้อมูลอุปกรณ์สายรัดอุตสาหกรรม หรือขอใบเสนอราคา</p>
-        </section>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">☰</label>
 
-        <section class="contact-container">
-            <div class="contact-info">
-                <h2>ติดต่อทีมงานผู้เชี่ยวชาญ</h2>
-                <p>เราพร้อมให้คำปรึกษา แนะนำผลิตภัณฑ์ที่เหมาะสมกับงานอุตสาหกรรมของคุณ เพื่อความมั่นใจและปลอดภัยสูงสุดในทุกการใช้งาน</p>
-                <div class="info-box"><div class="info-icon"><i class="fa-solid fa-location-dot"></i></div><div class="info-text"><h4>Address</h4><p>123 Industrial Estate, Bangkok, Thailand 10xxx</p></div></div>
-                <div class="info-box"><div class="info-icon"><i class="fa-solid fa-phone"></i></div><div class="info-text"><h4>Phone</h4><p>+66 2 123 4567</p></div></div>
-                <div class="info-box"><div class="info-icon"><i class="fa-solid fa-envelope"></i></div><div class="info-text"><h4>Email</h4><p>sales@megalok.com</p></div></div>
+    <ul class="nav-menu">
+        <li><a href="megalok.html">Home</a></li>
+        <li><a href="about-us.html">About Me</a></li>
+
+        <li class="dropdown">
+            <a href="#">Products ▾</a>
+            <ul class="dropdown-content">
+                <li><a href="product1.html">1. สายรัดสแตนเลส</a></li>
+                <li><a href="product2.html">2. เคเบิ้ลไทร์ไนลอน</a></li>
+                <li><a href="product3.html">3. อุปกรณ์เครื่องมือ</a></li>
+                <li><a href="product4.html">4. สายรัดพลาสติก</a></li>
+                <li><a href="product5.html">5. อุปกรณ์เสริมอื่นๆ</a></li>
+            </ul>
+        </li>
+
+        <li><a href="contact-megalok.html">Contact</a></li>
+    </ul>
+</header>
+
+<main>
+
+    <section class="page-header">
+        <h1>Contact <span>Us</span></h1>
+        <p>สอบถามข้อมูลสินค้า หรือขอใบเสนอราคา</p>
+    </section>
+
+    <section class="contact-container">
+
+        <div class="contact-info">
+            <h2>ติดต่อเรา</h2>
+            <p>ทีมงานพร้อมให้คำปรึกษา</p>
+
+            <div class="info-box">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="info-text">
+                    <h4>Address</h4>
+                    <p>Bangkok, Thailand</p>
+                </div>
             </div>
-            <div class="contact-video">
-                <video autoplay muted controls>
-                    <source src="video/video_test.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+
+            <div class="info-box">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="info-text">
+                    <h4>Phone</h4>
+                    <p>+66 xxx xxx xxx</p>
+                </div>
             </div>
 
-            <!-- <div class="contact-form">
-                <h3>Request a Quote</h3>
-                <form action="#" method="POST">
-                    <div class="form-group"><label>ชื่อบริษัท / ชื่อผู้ติดต่อ</label><input type="text" class="form-control" required></div>
-                    <div class="form-group"><label>อีเมลติดต่อกลับ</label><input type="email" class="form-control" required></div>
-                    <div class="form-group"><label>ความต้องการ / ระบุรุ่นสินค้า</label><input type="text" class="form-control" required></div>
-                    <div class="form-group"><label>รายละเอียดเพิ่มเติม</label><textarea class="form-control" required></textarea></div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div> -->
-        </section>
-
-        <section class="map-section"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3891.9492395360835!2d101.1701143!3d12.7167345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102fb4d25175369%3A0xf6b9204633a5fb37!2z4Lij4LmJ4Liy4LiZ4Lit4Liy4LiT4Liy4LiI4Lix4LiB4Lij4Lib4LmJ4Liy4Lii4LiE4Lij4Lia4Lin4LiH4LiI4LijIOC4o-C4sOC4ouC4reC4hw!5e0!3m2!1sth!2sth!4v1776327178511!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></section>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <h4>MEGA<span>LOK</span></h4>
-                <p>ผู้จัดจำหน่ายอุปกรณ์สายรัดอุตสาหกรรมคุณภาพสูง ตอบโจทย์ทุกความต้องการด้วยมาตรฐานระดับสากล ทนทานและปลอดภัย</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="megalok.html">Home</a></li>
-                    <li><a href="about-us.html">About Me</a></li>
-                    <li><a href="product1.html">All Products</a></li>
-                    <li><a href="contact-megalok.html">Contact Support</a></li>
-                </ul>
-            </div>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-           <div class="footer-col">
-                <h4>Get in Touch</h4>
-                <p><i class="fa-solid fa-location-dot"></i> 87/7 ถ.วัดมาบตาพุด ต.มาบตาพุด อ.เมืองระยอง จ.ระยอง 21150</p>
-                <p><i class="fa-solid fa-phone"></i> Tel: 064-5644453</p>
-                <p><i class="fa-brands fa-line"></i> LINE: mega.gd</p>
-            </div>
+            <div class="info-box">
+                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="info-text">
+                    <h4>Email</h4>
+                    <p>sales@megalok.com</p>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 MeGaLok Industrial. All rights reserved.</p>
+
+        <div class="contact-video">
+            <video autoplay muted controls>
+                <source src="video/video_test.mp4" type="video/mp4">
+            </video>
         </div>
-    </footer>
+
+    </section>
+
+    <section class="map-section">
+        <iframe src="https://maps.google.com/maps?q=bangkok&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h4>MEGA<span>LOK</span></h4>
+            <p>ผู้จัดจำหน่ายอุปกรณ์อุตสาหกรรม</p>
+
+            <!-- ✅ ปุ่ม dropdown (เพิ่มใหม่) -->
+            <div class="footer-dropdown">
+                <button class="footer-dropbtn" onclick="toggleFooterMenu(event)">
+                    เลือกดูสินค้า <i class="fa-solid fa-chevron-up"></i>
+                </button>
+
+                <div class="footer-drop-content" id="footerProductMenu">
+                    <a href="product1.html">1. สายรัดสแตนเลส</a>
+                    <a href="product2.html">2. เคเบิ้ลไทร์ไนลอน</a>
+                    <a href="product3.html">3. อุปกรณ์เครื่องมือ</a>
+                    <a href="product4.html">4. สายรัดพลาสติก</a>
+                    <a href="product5.html">5. อุปกรณ์เสริมอื่นๆ</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="megalok.html">Home</a></li>
+                <li><a href="about-us.html">About Me</a></li>
+                <li><a href="product1.html">All Products</a></li>
+                <li><a href="contact-megalok.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fa-solid fa-phone"></i> 064-5644453</p>
+            <p><i class="fa-brands fa-line"></i> mega.gd</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 MeGaLok Industrial. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- ✅ JavaScript (เพิ่มใหม่ สำคัญมาก) -->
+<script>
+function toggleFooterMenu(event) {
+    event.stopPropagation();
+    document.getElementById('footerProductMenu').classList.toggle('show-menu');
+}
+
+window.onclick = function(event) {
+    if (!event.target.closest('.footer-dropbtn')) {
+        let dropdown = document.getElementById('footerProductMenu');
+        if (dropdown && dropdown.classList.contains('show-menu')) {
+            dropdown.classList.remove('show-menu');
+        }
+    }
+}
+</script>
+
 </body>
 </html>
-
-
-

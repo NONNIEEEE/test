@@ -2,22 +2,33 @@
    Root Variables (ชุดสีธีมของเว็บไซต์)
 ========================================= */
 :root {
-    --bg-color: #0a1410;       /* สีพื้นหลังหลัก (เขียวเข้มมาก) */
-    --card-bg: #121e18;        /* สีพื้นหลังกล่องเนื้อหา */
-    --input-bg: #1a2b22;       /* สีพื้นหลังช่องกรอกข้อมูล */
-    --primary-color: #10b981;  /* สีเขียวมรกต (สีเด่น) */
-    --text-muted: #a0aec0;     /* สีตัวอักษรสีเทา/รอง */
+    --bg-color: #0a1410;
+    --card-bg: #121e18;
+    --input-bg: #1a2b22;
+    --primary-color: #10b981;
+    --text-muted: #a0aec0;
 }
 
 /* =========================================
-   Page Header
+   🌌 Background ทั้งหน้า (Gradient + Glow)
+========================================= */
+body {
+    background:
+        radial-gradient(circle at 50% 40%, rgba(16, 185, 129, 0.08), transparent 60%),
+        radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.05), transparent 50%),
+        linear-gradient(to bottom, #08120e, var(--bg-color));
+}
+
+/* =========================================
+   Page Header (Gradient สวยขึ้น)
 ========================================= */
 .page-header { 
-    /* ดัน Padding ลงมา 120px กันเมนูทับ */
     padding: 120px 20px 60px; 
     text-align: center; 
-    /* เพิ่มสีพื้นหลังไล่ระดับให้ดูมีมิติ */
-    background: linear-gradient(to bottom, rgba(16, 185, 129, 0.15), var(--bg-color)); 
+
+    background:
+        linear-gradient(to bottom, rgba(16, 185, 129, 0.25), transparent 70%),
+        linear-gradient(to bottom, transparent, var(--bg-color));
 }
 .page-header h1 { 
     font-size: 45px; 
@@ -30,7 +41,7 @@
 .page-header h1 span { 
     color: var(--primary-color); 
     font-weight: bold; 
-    text-shadow: 0 0 15px rgba(16, 185, 129, 0.4); /* เพิ่มแสงเรืองรองให้ข้อความ */
+    text-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
 }
 .page-header p { 
     color: var(--text-muted); 
@@ -74,8 +85,8 @@
 }
 .info-box:hover { 
     transform: translateX(10px); 
-    background: rgba(16, 185, 129, 0.05); /* เปลี่ยนสีพื้นหลังนิดๆ ตอน Hover */
-    border-left-color: #34d399; /* เปลี่ยนสีเส้นขอบให้สว่างขึ้น */
+    background: rgba(16, 185, 129, 0.05);
+    border-left-color: #34d399;
 }
 .info-icon { 
     font-size: 24px; 
@@ -156,14 +167,14 @@
 .form-control:focus { 
     border-color: var(--primary-color); 
     background: rgba(16, 185, 129, 0.05); 
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2); /* มีแสงเรืองรองเวลาคลิกพิมพ์ */
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 textarea.form-control { 
     resize: vertical; 
     min-height: 120px; 
 }
 .submit-btn { 
-    background: var(--primary-color); /* ใส่สีปุ่มให้เห็นชัดเจน */
+    background: var(--primary-color);
     color: #ffffff; 
     border: none; 
     padding: 15px 30px; 
@@ -177,7 +188,7 @@ textarea.form-control {
     letter-spacing: 2px; 
 }
 .submit-btn:hover { 
-    background: #059669; /* สีปุ่มเข้มขึ้นเวลาเอาเมาส์ชี้ */
+    background: #059669;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
 }
@@ -189,14 +200,12 @@ textarea.form-control {
     width: 100%; 
     height: 400px; 
     background: var(--bg-color); 
-    border-top: 2px solid var(--primary-color); /* เปลี่ยนขอบบนเป็นสีเขียว */
+    border-top: 2px solid var(--primary-color);
 }
 .map-section iframe { 
     width: 100%; 
     height: 100%; 
     border: none; 
-    /* เอาฟิลเตอร์ขาวดำ (grayscale/invert) ออก เพื่อให้แผนที่มีสีสัน */
-    /* แต่ยังคงลดความสว่างลงเล็กน้อย เพื่อไม่ให้แยงตาและเข้ากับธีมมืด */
     filter: brightness(90%) contrast(110%); 
 }
 

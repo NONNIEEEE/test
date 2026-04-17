@@ -3,9 +3,17 @@ main {
     padding-top: 100px;
 }
 
+/* ================= HEADER ================= */
 .page-header {
     padding: 50px 20px;
     text-align: center;
+
+    /* 🔥 เพิ่ม Gradient */
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 87, 34, 0.18),
+        rgba(0, 0, 0, 0)
+    );
 }
 
 .page-header h1 {
@@ -23,6 +31,17 @@ main {
     font-size: 16px;
 }
 
+/* ================= BODY BG ================= */
+body {
+    /* 🔥 เพิ่ม Gradient ทั้งหน้า */
+    background: linear-gradient(
+        to bottom,
+        #0a0a0a,
+        #000000
+    );
+}
+
+/* ================= CONTAINER ================= */
 .contact-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -31,8 +50,17 @@ main {
     grid-template-columns: 1fr 1.2fr;
     gap: 50px;
     align-items: center;
+
+    /* 🔥 เพิ่ม glow */
+    background: radial-gradient(
+        circle at top,
+        rgba(255, 87, 34, 0.08),
+        transparent 70%
+    );
+    border-radius: 20px;
 }
 
+/* ================= INFO ================= */
 .contact-info h2 {
     font-size: clamp(30px, 5vw, 40px);
     margin-bottom: 20px;
@@ -77,9 +105,7 @@ main {
     font-size: 15px;
 }
 
-/* =========================================
-   Contact Video
-========================================= */
+/* ================= VIDEO ================= */
 .contact-video {
     display: flex;
     align-items: center;
@@ -93,6 +119,7 @@ main {
     width: 100%;
     height: 450px;
 }
+
 .contact-video video {
     width: 100%;
     height: 100%;
@@ -100,6 +127,7 @@ main {
     border-radius: 10px;
 }
 
+/* ================= FORM ================= */
 .contact-form {
     background: var(--card-bg);
     border: 1px solid rgba(255, 87, 34, 0.2);
@@ -164,6 +192,7 @@ textarea.form-control {
     transform: translateY(-2px);
 }
 
+/* ================= MAP ================= */
 .map-section {
     width: 100%;
     height: 380px;
@@ -176,6 +205,7 @@ textarea.form-control {
     border: 0;
 }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
     .contact-container {
         grid-template-columns: 1fr;
