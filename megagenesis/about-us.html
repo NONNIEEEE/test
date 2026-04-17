@@ -77,25 +77,59 @@
         <div class="footer-container">
             <div class="footer-col">
                 <h4>MEGA<span>GENESIS</span></h4>
-                <p>ทีมงานกราฟิกดีไซน์และป้ายครบวงจร พร้อมบริการทั้งงานพิมพ์และงานป้ายอุตสาหกรรม</p>
+                <p>อาณาจักรป้ายครบวงจร ระยอง ให้บริการครอบคลุมทั้งงานพิมพ์ งานป้ายโฆษณา และป้ายความปลอดภัยในโรงงานอุตสาหกรรม</p>
+                <div class="footer-dropdown">
+                    <button class="footer-dropbtn" onclick="toggleFooterMenu(event)">
+                        เลือกดูสินค้า <i class="fa-solid fa-chevron-up"></i>
+                    </button>
+                    <div class="footer-drop-content" id="footerProductMenu">
+                        <a href="product1.html">1. สื่อสิ่งพิมพ์ / สติ๊กเกอร์</a>
+                        <a href="product2.html">2. ป้ายไวนิล / อิงค์เจ็ท / บิลบอร์ด</a>
+                        <a href="product3.html">3. ป้ายเซฟตี้ / อะคริลิค / พลาสวูด</a>
+                        <a href="product4.html">4. งานสแตนเลส / ป้ายเนมเพลท</a>
+                        <a href="product5.html">5. สแตนดี้ (Feature Board)</a>
+                    </div>
+                </div>
             </div>
             <div class="footer-col">
-                <h4>Services</h4>
-                <p>• สื่อสิ่งพิมพ์ / สติ๊กเกอร์<br>
-                    • ป้ายไวนิล / อิงค์เจ็ท<br>
-                    • ป้ายเซฟตี้ / พลาสวูด<br>
-                    • ป้ายสแตนเลส / เนมเพลท</p>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="megatreasure.html">Home</a></li>
+                    <li><a href="about-us.html">About Me</a></li>
+                    <li><a href="product1.html">All Product</a></li>
+                    <li><a href="contact-megatreasure.html">Contact Support</a></li>
+                </ul>
             </div>
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
             <div class="footer-col">
-                <h4>Contact</h4>
-                <p>📍 87/7 ถ.วัดมาบตาพุด จ.ระยอง 21150</p>
-                <p>📞 Tel: 064-5644453</p>
-                <p>💬 LINE: mega.gd</p>
+                <h4>Get in Touch</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 87/7 ถ.วัดมาบตาพุด ต.มาบตาพุด อ.เมืองระยอง จ.ระยอง 21150</p>
+                <p><i class="fa-solid fa-phone"></i> Tel: 064-5644453</p>
+                <p><i class="fa-brands fa-line"></i> LINE: mega.gd</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 MEGA GENESIS GRAPHIC DESIGN. All rights reserved.</p>
+            <p>&copy; 2026 Mega Treasure Corporation. All rights reserved.</p>
         </div>
     </footer>
+<script>
+    function toggleFooterMenu(event) {
+        event.stopPropagation();
+        const dropdown = document.getElementById('footerProductMenu');
+        if (dropdown) {
+            dropdown.classList.toggle('show-menu');
+        }
+    }
+
+    document.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('footerProductMenu');
+        if (!dropdown) return;
+        if (!event.target.closest('.footer-dropdown')) {
+            dropdown.classList.remove('show-menu');
+        }
+    });
+</script>
 </body>
 </html>
