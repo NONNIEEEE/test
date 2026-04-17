@@ -542,8 +542,12 @@ footer {
 ========================================= */
 .header-left {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    align-items: center; /* 👈 เพิ่มบรรทัดนี้เพื่อบังคับให้เนื้อหาตรงกลาง */
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    text-decoration: none;
 }
 
 .back-to-main {
