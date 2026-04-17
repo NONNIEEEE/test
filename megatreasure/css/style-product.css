@@ -36,11 +36,15 @@
      border-bottom: 1px solid rgba(20, 184, 166, 0.2);
  }
 
- .header-left {
-     display: flex;
-     align-items: center;
-     gap: 15px;
- }
+.header-left {
+    display: flex;
+    align-items: center; /* 👈 เพิ่มบรรทัดนี้เพื่อบังคับให้เนื้อหาตรงกลาง */
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    text-decoration: none;
+}
 
  .back-to-main {
      color: var(--text-main);

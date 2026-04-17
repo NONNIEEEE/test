@@ -39,9 +39,12 @@ header {
 }
 
 .header-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    height: 65px; 
+    max-width: 250px; 
+    width: auto;
+    object-fit: contain;
+    display: block; /* 👈 เพิ่มบรรทัดนี้เพื่อลบช่องว่างขอบล่าง (Baseline) */
+    transition: 0.3s ease;
 }
 
 .back-to-main {
