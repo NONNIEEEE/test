@@ -316,7 +316,7 @@
      justify-content: center;
      align-items: center;
      text-align: center;
-     background: linear-gradient(to bottom, rgba(99, 68, 47, 0.8), var(--bg-color)), url('../images-megagensis/logo_gen.jpg') center/cover;
+     background: linear-gradient(to bottom, rgba(99, 68, 47, 0.8), var(--bg-color)), url('../../images/band_design.jpg') center/cover;
      padding: 0 20px;
  }
 

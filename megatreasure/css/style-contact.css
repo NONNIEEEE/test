@@ -121,7 +121,9 @@ body {
     width: 100%;
     height: 450px;
 }
-.contact-video video {
+.contact-video video,
+.contact-video iframe {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
