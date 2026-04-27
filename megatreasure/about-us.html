@@ -8,15 +8,19 @@
     <link rel="icon" type="image/png" href="images-megatreasure/t-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style-megatreasure.css">
     <!-- <link rel="stylesheet" href="css/style-product.css"> -->
 
 </head>
+
 <body class="is-loading skeleton-about">
 
-            <div class="skeleton-loader" aria-hidden="true">
+    <div class="skeleton-loader" aria-hidden="true">
         <div class="sk-topbar sk-shimmer"></div>
         <div class="sk-wrap">
             <section class="sk-about-hero">
@@ -65,7 +69,7 @@
             </section>
         </div>
     </div>
-<header>
+    <header>
         <div class="header-left">
             <a href="../index.html" class="back-to-main" title="กลับหน้าหลัก"><i class="fa-solid fa-home"></i></a>
 
@@ -111,7 +115,8 @@
                 <p>เราเชี่ยวชาญเป็นพิเศษในกลุ่มผลิตภัณฑ์สายรัด <strong>Stainless Steel 316 Cable Ties</strong> (แบบ
                     Non-Coated, UV Proof รวมถึงรุ่นเคลือบ PVC, Epoxy และ Polyester) ระบบล็อค <strong>Ball Lock
                         Type</strong> และป้ายอุตสาหกรรม <strong>Traffolyte</strong> พร้อมอุปกรณ์เสริม
-                    <strong>Mega-Pulls</strong> และ <strong>Mega Lok</strong></p>
+                    <strong>Mega-Pulls</strong> และ <strong>Mega Lok</strong>
+                </p>
                 <p>สินค้าทุกชิ้นผ่านการคัดสรรวัสดุที่ทนทานต่อสภาพแวดล้อมขั้นสุด ไม่ว่าจะเป็นความร้อนสูง สารเคมีรุนแรง
                     หรือการกัดกร่อนจากสภาพแวดล้อม เพื่อให้ลูกค้ามั่นใจในความปลอดภัยและอายุการใช้งานที่ยาวนาน
                     เราพร้อมให้คำปรึกษา แนะนำสเปคสินค้าที่เหมาะสมกับหน้างานจริง ภายใต้การดูแลจากทีมงานมืออาชีพ</p>
@@ -156,7 +161,7 @@
                 <h4>MEGA<span>TREASURE</span></h4>
                 <p>MeGA Treasure Corporation ศูนย์รวมอุปกรณ์สายรัดเคเบิ้ลไทร์สแตนเลส 316
                     และป้ายอุตสาหกรรมที่ตอบโจทย์ทุกความต้องการของโรงงานคุณ</p>
-                
+
                 <div class="footer-dropdown">
                     <button class="footer-dropbtn" onclick="toggleFooterMenu(event)">
                         เลือกดูสินค้า <i class="fa-solid fa-chevron-up"></i>
@@ -195,23 +200,23 @@
         </div>
     </footer>
 
-<script>
-    function toggleFooterMenu(event) {
-        event.stopPropagation();
-        const dropdown = document.getElementById('footerProductMenu');
-        if (dropdown) {
-            dropdown.classList.toggle('show-menu');
+    <script>
+        function toggleFooterMenu(event) {
+            event.stopPropagation();
+            const dropdown = document.getElementById('footerProductMenu');
+            if (dropdown) {
+                dropdown.classList.toggle('show-menu');
+            }
         }
-    }
 
-    document.addEventListener('click', function(event) {
-        const dropdown = document.getElementById('footerProductMenu');
-        if (!dropdown) return;
-        if (!event.target.closest('.footer-dropdown')) {
-            dropdown.classList.remove('show-menu');
-        }
-    });
-</script>
+        document.addEventListener('click', function (event) {
+            const dropdown = document.getElementById('footerProductMenu');
+            if (!dropdown) return;
+            if (!event.target.closest('.footer-dropdown')) {
+                dropdown.classList.remove('show-menu');
+            }
+        });
+    </script>
 
     <script>
         (function () {
@@ -228,12 +233,7 @@
                 }, { once: true });
             }
         })();
-    </script></body>
+    </script>
+</body>
 
 </html>
-
-
-
-
-
-
