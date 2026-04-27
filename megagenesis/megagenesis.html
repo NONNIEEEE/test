@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style-megagensis.css">
 </head>
-<body>
-  <header>
+<body class="is-loading skeleton-home">
+
+        <div class="skeleton-loader" aria-hidden="true">
+        <div class="sk-topbar sk-shimmer"></div>
+        <div class="sk-canvas">
+            <section class="sk-section sk-hero">
+                <div class="sk-line sk-title sk-shimmer"></div>
+                <div class="sk-line sk-shimmer"></div>
+                <div class="sk-line sk-short sk-shimmer"></div>
+            </section>
+
+            <section class="sk-section sk-grid">
+                <article class="sk-card">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </article>
+                <article class="sk-card">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </article>
+                <article class="sk-card">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </article>
+                <article class="sk-card">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </article>
+                <article class="sk-card">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </article>
+                <article class="sk-card">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </article>
+            </section>
+
+            <section class="sk-section sk-split">
+                <div class="sk-panel">
+                    <div class="sk-line sk-title sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </div>
+                <div class="sk-panel">
+                    <div class="sk-thumb sk-large sk-shimmer"></div>
+                </div>
+            </section>
+
+            <section class="sk-section sk-map">
+                <div class="sk-thumb sk-mapbox sk-shimmer"></div>
+            </section>
+        </div>
+    </div>
+<header>
         <div class="header-left">
             <a href="../index.html" class="back-to-main" title="กลับหน้าหลัก"><i class="fa-solid fa-home"></i></a>
             
@@ -129,5 +189,27 @@
             }
         }
     </script>
-</body>
+
+    <script>
+        (function () {
+            const finishSkeletonLoading = function () {
+                document.body.classList.remove('is-loading');
+                document.body.classList.add('page-ready');
+            };
+
+            if (document.readyState === 'complete') {
+                setTimeout(finishSkeletonLoading, 300);
+            } else {
+                window.addEventListener('load', function () {
+                    setTimeout(finishSkeletonLoading, 300);
+                }, { once: true });
+            }
+        })();
+    </script></body>
 </html>             
+
+
+
+
+
+

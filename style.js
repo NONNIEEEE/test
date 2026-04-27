@@ -3,6 +3,19 @@ let isScrolling = false;
 let startX = 0; 
 let endX = 0;   
 
+const finishSkeletonLoading = () => {
+    document.body.classList.remove('is-loading');
+    document.body.classList.add('page-ready');
+};
+
+if (document.readyState === 'complete') {
+    setTimeout(finishSkeletonLoading, 300);
+} else {
+    window.addEventListener('load', () => {
+        setTimeout(finishSkeletonLoading, 300);
+    }, { once: true });
+}
+
 const applyItemImages = () => {
     const items = document.querySelectorAll('.item');
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -11,8 +11,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style-megagensis.css">
 </head>
-<body>
-    <header>
+<body class="is-loading skeleton-about">
+
+            <div class="skeleton-loader" aria-hidden="true">
+        <div class="sk-topbar sk-shimmer"></div>
+        <div class="sk-wrap">
+            <section class="sk-about-hero">
+                <div class="sk-line sk-title sk-shimmer"></div>
+                <div class="sk-line sk-shimmer"></div>
+                <div class="sk-line sk-mid sk-shimmer"></div>
+            </section>
+
+            <section class="sk-about-main">
+                <div class="sk-about-text sk-panel">
+                    <div class="sk-line sk-title sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-mid sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </div>
+                <div class="sk-about-media sk-panel">
+                    <div class="sk-thumb sk-portrait sk-shimmer"></div>
+                </div>
+            </section>
+
+            <section class="sk-about-values-head">
+                <div class="sk-line sk-title sk-shimmer"></div>
+            </section>
+
+            <section class="sk-about-values-grid">
+                <article class="sk-vcard">
+                    <div class="sk-dot sk-shimmer"></div>
+                    <div class="sk-line sk-mid sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </article>
+                <article class="sk-vcard">
+                    <div class="sk-dot sk-shimmer"></div>
+                    <div class="sk-line sk-mid sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </article>
+                <article class="sk-vcard">
+                    <div class="sk-dot sk-shimmer"></div>
+                    <div class="sk-line sk-mid sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                </article>
+            </section>
+        </div>
+    </div>
+<header>
         <div class="header-left">
             <a href="../index.html" class="back-to-main" title="กลับหน้าหลัก"><i class="fa-solid fa-home"></i></a>
             <a href="megagenesis.html" class="logo">
@@ -136,5 +186,27 @@
         }
     });
 </script>
-</body>
+
+    <script>
+        (function () {
+            const finishSkeletonLoading = function () {
+                document.body.classList.remove('is-loading');
+                document.body.classList.add('page-ready');
+            };
+
+            if (document.readyState === 'complete') {
+                setTimeout(finishSkeletonLoading, 300);
+            } else {
+                window.addEventListener('load', function () {
+                    setTimeout(finishSkeletonLoading, 300);
+                }, { once: true });
+            }
+        })();
+    </script></body>
 </html>
+
+
+
+
+
+

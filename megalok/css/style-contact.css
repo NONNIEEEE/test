@@ -1,4 +1,4 @@
-/* =========================================
+﻿/* =========================================
    🌌 Background ทั้งหน้า + Glow
 ========================================= */
 body {
@@ -209,4 +209,254 @@ textarea.form-control {
     .contact-form { 
         padding: 30px 20px; 
     } 
+}
+
+/* Skeleton Loading */
+body.is-loading {
+    overflow: hidden;
+}
+
+body.is-loading > *:not(.skeleton-loader) {
+    visibility: hidden;
+}
+
+body.page-ready > *:not(.skeleton-loader) {
+    visibility: visible;
+}
+
+.skeleton-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    background: #0f1417;
+    transition: opacity 0.35s ease;
+}
+
+body.is-loading .skeleton-loader {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body.page-ready .skeleton-loader {
+    opacity: 0;
+}
+
+.sk-topbar,
+.sk-thumb,
+.sk-line,
+.sk-tags,
+.sk-dot {
+    position: relative;
+    overflow: hidden;
+    background: #1c2429;
+    border-radius: 10px;
+}
+
+.sk-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0) 100%);
+    animation: skeleton-shimmer 1.25s infinite;
+}
+
+.sk-wrap,
+.sk-canvas {
+    width: min(1200px, 94vw);
+    margin: 92px auto 0;
+}
+
+.sk-wrap {
+    display: grid;
+    gap: 20px;
+}
+
+.sk-topbar {
+    height: 76px;
+    border-radius: 0;
+}
+
+.sk-line {
+    height: 14px;
+    margin-bottom: 10px;
+}
+
+.sk-title {
+    height: 42px;
+    width: min(520px, 72%);
+}
+
+.sk-mid {
+    width: 76%;
+}
+
+.sk-short {
+    width: 58%;
+}
+
+.sk-thumb {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+}
+
+.sk-panel {
+    background: #151d21;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.sk-product-head,
+.sk-product-grid,
+.sk-about-hero,
+.sk-about-main,
+.sk-about-values-head,
+.sk-about-values-grid,
+.sk-section,
+.sk-hero,
+.sk-grid,
+.sk-split,
+.sk-map {
+    display: none;
+}
+
+/* Product skeleton: portfolio header + gallery cards */
+body.skeleton-product .sk-product-head,
+body.skeleton-product .sk-product-grid {
+    display: grid;
+}
+
+body.skeleton-product .sk-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.sk-pcard {
+    background: #151d21;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.sk-pcard .sk-thumb {
+    margin-bottom: 10px;
+}
+
+.sk-tags {
+    height: 28px;
+    width: 46%;
+    border-radius: 999px;
+    margin-top: 8px;
+}
+
+/* About skeleton: hero + split content + values cards */
+body.skeleton-about .sk-about-hero,
+body.skeleton-about .sk-about-main,
+body.skeleton-about .sk-about-values-head,
+body.skeleton-about .sk-about-values-grid {
+    display: grid;
+}
+
+body.skeleton-about .sk-about-main {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 16px;
+}
+
+.sk-portrait {
+    aspect-ratio: 4 / 5;
+}
+
+body.skeleton-about .sk-about-values-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.sk-vcard {
+    background: #151d21;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.sk-dot {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+/* Keep existing fallback template (home/contact currently uses sk-section) */
+body.skeleton-home .sk-hero,
+body.skeleton-home .sk-grid,
+body.skeleton-contact .sk-hero,
+body.skeleton-contact .sk-split,
+body.skeleton-contact .sk-map {
+    display: grid;
+}
+
+body.skeleton-home .sk-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+body.skeleton-home .sk-card:nth-child(n+4) {
+    display: none;
+}
+
+body.skeleton-contact .sk-split {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.sk-mapbox {
+    aspect-ratio: 16 / 5;
+}
+
+@keyframes skeleton-shimmer {
+    to { transform: translateX(100%); }
+}
+
+@media (max-width: 1024px) {
+    body.skeleton-product .sk-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .sk-wrap,
+    .sk-canvas {
+        margin-top: 84px;
+        gap: 14px;
+    }
+
+    .sk-title {
+        height: 34px;
+        width: 84%;
+    }
+
+    .sk-line {
+        height: 12px;
+    }
+
+    body.skeleton-product .sk-product-grid,
+    body.skeleton-about .sk-about-values-grid,
+    body.skeleton-home .sk-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    body.skeleton-about .sk-about-main,
+    body.skeleton-contact .sk-split {
+        grid-template-columns: 1fr !important;
+    }
+
+    .sk-pcard:nth-child(n+5) {
+        display: none;
+    }
+
+    .sk-mapbox {
+        aspect-ratio: 16 / 7;
+    }
 }

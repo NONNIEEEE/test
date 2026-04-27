@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -16,8 +16,57 @@
        
     </style>
 </head>
-<body>
-    <header>
+<body class="is-loading skeleton-product">
+
+            <div class="skeleton-loader" aria-hidden="true">
+        <div class="sk-topbar sk-shimmer"></div>
+        <div class="sk-wrap">
+            <section class="sk-product-head">
+                <div class="sk-line sk-title sk-shimmer"></div>
+                <div class="sk-line sk-mid sk-shimmer"></div>
+            </section>
+
+            <section class="sk-product-grid">
+                <article class="sk-pcard">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                    <div class="sk-tags sk-shimmer"></div>
+                </article>
+                <article class="sk-pcard">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                    <div class="sk-tags sk-shimmer"></div>
+                </article>
+                <article class="sk-pcard">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                    <div class="sk-tags sk-shimmer"></div>
+                </article>
+                <article class="sk-pcard">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                    <div class="sk-tags sk-shimmer"></div>
+                </article>
+                <article class="sk-pcard">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                    <div class="sk-tags sk-shimmer"></div>
+                </article>
+                <article class="sk-pcard">
+                    <div class="sk-thumb sk-shimmer"></div>
+                    <div class="sk-line sk-shimmer"></div>
+                    <div class="sk-line sk-short sk-shimmer"></div>
+                    <div class="sk-tags sk-shimmer"></div>
+                </article>
+            </section>
+        </div>
+    </div>
+<header>
         <div class="header-left">
            <a href="../index.html" class="back-to-main" title="กลับหน้าหลัก"><i class="fa-solid fa-home"></i></a>
             
@@ -250,5 +299,27 @@
         }
     });
 </script>
-</body>
+
+    <script>
+        (function () {
+            const finishSkeletonLoading = function () {
+                document.body.classList.remove('is-loading');
+                document.body.classList.add('page-ready');
+            };
+
+            if (document.readyState === 'complete') {
+                setTimeout(finishSkeletonLoading, 300);
+            } else {
+                window.addEventListener('load', function () {
+                    setTimeout(finishSkeletonLoading, 300);
+                }, { once: true });
+            }
+        })();
+    </script></body>
 </html>
+
+
+
+
+
+
