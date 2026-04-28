@@ -1,11 +1,11 @@
 ﻿:root {
-    /* สีธีมของ Megatreasure */
-    --primary-color: #14B8A6;
-    --bg-color: #020504;
+    /* สีธีมของ Megalok */
+    --primary-color: #E60000;
+    --bg-color: #0a0a0a;
     --text-main: #ffffff;
-    --text-muted: #A3B1AA;
-    --card-bg: #0F1C18;
-    --nav-bg: rgba(15, 28, 24, 0.95);
+    --text-muted: #aaaaaa;
+    --card-bg: #1a1a1a;
+    --nav-bg: rgba(10, 10, 10, 0.95);
 }
 
 body {
@@ -35,7 +35,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-    border-bottom: 1px solid rgba(20, 184, 166, 0.2);
+    border-bottom: 1px solid rgba(230, 0, 0, 0.2);
 }
 
 .header-left {
@@ -119,7 +119,7 @@ header .logo img:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(20, 184, 166, 0.1);
+    border: 1px solid rgba(230, 0, 0, 0.1);
 }
 
 .dropdown-content a {
@@ -226,7 +226,7 @@ main {
     background: var(--card-bg);
     border-radius: 15px;
     overflow: hidden;
-    border: 1px solid rgba(20, 184, 166, 0.15);
+    border: 1px solid rgba(230, 0, 0, 0.15);
     cursor: pointer;
     transition: 0.3s ease;
     display: flex;
@@ -235,8 +235,8 @@ main {
 
 .gallery-item:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(20, 184, 166, 0.2);
-    border-color: rgba(20, 184, 166, 0.5);
+    box-shadow: 0 15px 30px rgba(230, 0, 0, 0.2);
+    border-color: rgba(230, 0, 0, 0.5);
 }
 
 .gallery-item img {
@@ -273,14 +273,14 @@ main {
 
 .work-tag {
     display: inline-block;
-    background: rgba(20, 184, 166, 0.1);
+    background: rgba(230, 0, 0, 0.1);
     color: var(--primary-color);
     font-size: 12px;
     padding: 5px 12px;
     border-radius: 20px;
     margin-right: 5px;
     margin-bottom: 5px;
-    border: 1px solid rgba(20, 184, 166, 0.2);
+    border: 1px solid rgba(230, 0, 0, 0.2);
 }
 
 /* -------------------------------------
@@ -294,7 +294,7 @@ main {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(2, 5, 4, 0.9);
+    background-color: rgba(10, 10, 10, 0.9);
     backdrop-filter: blur(5px);
     align-items: center;
     justify-content: center;
@@ -309,7 +309,7 @@ main {
 
 .modal-container {
     background-color: var(--card-bg);
-    border: 1px solid rgba(20, 184, 166, 0.4);
+    border: 1px solid rgba(230, 0, 0, 0.4);
     border-radius: 15px;
     max-width: 900px;
     width: 90%;
@@ -393,7 +393,7 @@ main {
 
 .order-btn:hover {
     background: #fff;
-    box-shadow: 0 0 20px rgba(20, 184, 166, 0.4);
+    box-shadow: 0 0 20px rgba(230, 0, 0, 0.4);
     color: var(--primary-color);
 }
 
@@ -424,7 +424,7 @@ main {
 footer {
     background: var(--card-bg);
     padding: 50px 20px 20px;
-    border-top: 1px solid rgba(20, 184, 166, 0.1);
+    border-top: 1px solid rgba(230, 0, 0, 0.1);
 }
 
 .footer-container {
