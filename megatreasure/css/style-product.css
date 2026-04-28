@@ -435,11 +435,11 @@
      gap: 30px;
  }
 
- .footer-col h4 {
+.footer-col h4 {
      font-size: 20px;
      margin-bottom: 20px;
      color: #fff;
-     font-weight: 300;
+     font-weight: 700;
  }
 
  .footer-col h4 span {
@@ -452,6 +452,7 @@
      line-height: 1.6;
      font-size: 15px;
      margin-bottom: 10px;
+     font-weight: 500;
  }
 
  .footer-bottom {
@@ -461,6 +462,7 @@
      border-top: 1px solid rgba(255, 255, 255, 0.05);
      color: var(--text-muted);
      font-size: 14px;
+     font-weight: 500;
  }
 
 /* Skeleton Loading */

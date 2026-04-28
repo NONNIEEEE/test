@@ -33,6 +33,7 @@
 
 /* ================= BODY BG ================= */
 body {
+    font-family: 'Kanit', sans-serif;
     /* 🔥 เพิ่ม Gradient ทั้งหน้า */
     background: linear-gradient(
         to bottom,
