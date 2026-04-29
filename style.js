@@ -3,6 +3,10 @@ let isScrolling = false;
 let startX = 0; 
 let endX = 0;   
 
+const activateSelection = () => {
+    document.body.classList.remove('not-selected');
+};
+
 const finishSkeletonLoading = () => {
     document.body.classList.remove('is-loading');
     document.body.classList.add('page-ready');
@@ -73,6 +77,7 @@ slide.addEventListener('click', function(e) {
     if (Math.abs(startX - endX) > 10) return; 
 
     if (item) {
+        activateSelection();
         const items = Array.from(document.querySelectorAll('.item'));
         const index = items.indexOf(item);
 
@@ -109,6 +114,7 @@ const handleDrag = () => {
     const currentItems = document.querySelectorAll('.item');
 
     if (Math.abs(diffX) > threshold) {
+        activateSelection();
         isScrolling = true;
 
         if (diffX > 0) {
@@ -140,6 +146,7 @@ slide.addEventListener('mouseleave', () => { slide.style.cursor = 'pointer'; });
 slide.addEventListener('wheel', function(e) {
     e.preventDefault();
     if (isScrolling) return;
+    activateSelection();
     isScrolling = true; 
 
     const currentItems = document.querySelectorAll('.item');

@@ -26,6 +26,32 @@ body.page-ready .container {
     position: relative;
 }
 
+.select-hint {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-size: clamp(18px, 2.2vw, 30px);
+    font-weight: 600;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    z-index: 5;
+    max-width: min(560px, 80vw);
+    line-height: 1.4;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+body.not-selected .select-hint {
+    opacity: 1;
+}
+
+body:not(.not-selected) .select-hint {
+    opacity: 0;
+}
+
 .skeleton-loader {
     position: fixed;
     inset: 0;
@@ -212,6 +238,17 @@ body.page-ready .skeleton-loader {
     display: block;
 }
 
+body.not-selected .slide .item:nth-child(1),
+body.not-selected .slide .item:nth-child(2) {
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.48) 45%, rgba(0, 0, 0, 0.2) 100%),
+        url("images/bgfont_1.png") center/cover no-repeat !important;
+}
+
+body.not-selected .slide .item:nth-child(2) .content {
+    display: none !important;
+}
+
 .content .name {
     font-size: 80px;
     font-weight: bold;
@@ -315,6 +352,14 @@ body.page-ready .skeleton-loader {
 
 /* 📱 สำหรับ Mobile ทุกรุ่น (หน้าจอไม่เกิน 768px) */
 @media screen and (max-width: 768px) {
+    .select-hint {
+        left: 0;
+        top: 33%;
+        width: 100%;
+        padding: 0 35px;
+        font-size: 22px;
+    }
+
     /* 1. จัดตำแหน่งข้อความให้อยู่ช่วงกลางจอ ไม่ทับด้านบน */
     .item .content {
         width: 100%;
