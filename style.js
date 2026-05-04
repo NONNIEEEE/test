@@ -3,23 +3,33 @@ let isScrolling = false;
 let startX = 0; 
 let endX = 0;   
 
-const activateSelection = () => {
-    document.body.classList.remove('not-selected');
-};
-
 const finishSkeletonLoading = () => {
     document.body.classList.remove('is-loading');
     document.body.classList.add('page-ready');
 };
 
-if (document.readyState === 'complete') {
-    setTimeout(finishSkeletonLoading, 300);
-} else {
-    window.addEventListener('load', () => {
-        setTimeout(finishSkeletonLoading, 300);
-    }, { once: true });
-}
+// ==========================
+// ✅ โหลดหน้า + เลือกอัตโนมัติ
+// ==========================
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        finishSkeletonLoading();
 
+        const items = document.querySelectorAll('.item');
+
+        // 👉 ตั้ง default = ตัวที่ 2
+        items.forEach(i => i.classList.remove('active'));
+        if (items[1]) {
+            items[1].classList.add('active');
+        }
+
+    }, 300);
+}, { once: true });
+
+
+// ==========================
+// 🎨 set background image
+// ==========================
 const applyItemImages = () => {
     const items = document.querySelectorAll('.item');
 
@@ -37,93 +47,96 @@ const applyItemImages = () => {
             item.style.setProperty('--bg-image', thumbImage);
         }
 
-        // Remove inline background-image so CSS rules can switch between thumb and bg.
         item.style.backgroundImage = '';
     });
 };
 
 applyItemImages();
-// ==========================================
-// 🌟 ระบบตัวนับ (Counter) ว่ามีกี่รูป
-// ==========================================
+
+
+// ==========================
+// 🔢 Counter
+// ==========================
 const allItemsInitial = document.querySelectorAll('.item');
 const totalItems = allItemsInitial.length;
 
-// ฝังหมายเลขดั้งเดิมไว้ในแต่ละรูป
 allItemsInitial.forEach((item, index) => {
     item.dataset.index = index + 1;
 });
 
-// สร้างกล่อง HTML สำหรับแสดงตัวเลข
 const counter = document.createElement('div');
 counter.className = 'slide-counter';
 document.querySelector('.container').appendChild(counter);
 
-// ฟังก์ชันสำหรับอัปเดตตัวเลข (อิงจากรูปพื้นหลังหลักที่แสดงอยู่)
 const updateCounter = () => {
-    const currentBg = document.querySelectorAll('.item')[1]; // รูปที่ 2 ของ DOM คือแบคกราวนด์หลัก
+    const currentBg = document.querySelectorAll('.item')[1];
     if (currentBg) {
         counter.innerText = `${currentBg.dataset.index} / ${totalItems}`;
     }
 };
-updateCounter(); 
+updateCounter();
 
 
-// ==========================================
-// ส่วนที่ 1: ระบบคลิกเพื่อเลือก (หมุนวงกลมทั้ง 6 รูป)
-// ==========================================
+// ==========================
+// 🖱️ CLICK (เลือก + active)
+// ==========================
 slide.addEventListener('click', function(e) {
     const item = e.target.closest('.item');
-    if (Math.abs(startX - endX) > 10) return; 
+    if (!item) return;
 
-    if (item) {
-        activateSelection();
-        const items = Array.from(document.querySelectorAll('.item'));
-        const index = items.indexOf(item);
+    if (Math.abs(startX - endX) > 10) return;
 
-        // ถ้าคลิกรูปที่ไม่ใช่รูป background หลัก (index 1)
-        if (index !== 1) {
-            // หมุนรูปให้รูปที่คลิกไปยังตำแหน่ง index 1
-            while (items.indexOf(document.querySelectorAll('.item')[index]) !== 1 && item) {
-                const currentItems = document.querySelectorAll('.item');
-                const currentIndex = Array.from(currentItems).indexOf(item);
-                
-                if (currentIndex > 1) {
-                    slide.appendChild(currentItems[0]); // หมุนจากต้นมาท้าย
-                } else {
-                    break;
-                }
+    const items = Array.from(document.querySelectorAll('.item'));
+    const index = items.indexOf(item);
+
+    // หมุนให้ item มาอยู่ตำแหน่งที่ 2
+    if (index !== 1) {
+        while (items.indexOf(document.querySelectorAll('.item')[index]) !== 1) {
+            const currentItems = document.querySelectorAll('.item');
+            const currentIndex = Array.from(currentItems).indexOf(item);
+
+            if (currentIndex > 1) {
+                slide.appendChild(currentItems[0]);
+            } else {
+                break;
             }
-            
-            updateCounter(); 
         }
     }
+
+    // 👉 ตั้ง active
+    document.querySelectorAll('.item').forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+
+    updateCounter();
 });
 
 slide.style.userSelect = 'none';
 slide.addEventListener('dragstart', (e) => e.preventDefault());
 
 
-// ==========================================
-// ส่วนที่ 2: ระบบลาก / ปัด (หมุนเป็นวงกลมทั้ง 6 รูป)
-// ==========================================
+// ==========================
+// 👉 DRAG
+// ==========================
 const handleDrag = () => {
-    if (isScrolling) return; 
-    const threshold = 50; 
+    if (isScrolling) return;
+
+    const threshold = 50;
     const diffX = startX - endX;
     const currentItems = document.querySelectorAll('.item');
 
     if (Math.abs(diffX) > threshold) {
-        activateSelection();
         isScrolling = true;
 
         if (diffX > 0) {
-            // ลากซ้าย: นำรูปแรก (index 0) ไปต่อท้ายสุด เพื่อทำให้วงกลมหมุน
             slide.appendChild(currentItems[0]);
         } else {
-            // ลากขวา: นำรูปท้ายสุด มาไว้หน้าสุด เพื่อทำให้วงกลมหมุนกลับ
             slide.insertBefore(currentItems[currentItems.length - 1], currentItems[0]);
         }
+
+        // 👉 update active ใหม่ (ตัวกลาง)
+        const newItems = document.querySelectorAll('.item');
+        newItems.forEach(i => i.classList.remove('active'));
+        if (newItems[1]) newItems[1].classList.add('active');
 
         updateCounter();
 
@@ -135,34 +148,36 @@ const handleDrag = () => {
 
 slide.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
 slide.addEventListener('touchend', (e) => { endX = e.changedTouches[0].clientX; handleDrag(); });
-slide.addEventListener('mousedown', (e) => { startX = e.clientX; slide.style.cursor = 'grabbing'; });
-slide.addEventListener('mouseup', (e) => { endX = e.clientX; slide.style.cursor = 'pointer'; handleDrag(); });
-slide.addEventListener('mouseleave', () => { slide.style.cursor = 'pointer'; });
+slide.addEventListener('mousedown', (e) => { startX = e.clientX; });
+slide.addEventListener('mouseup', (e) => { endX = e.clientX; handleDrag(); });
 
 
-// ==========================================
-// ส่วนที่ 3: ระบบ Scroll ลูกกลิ้ง (หมุนวงกลมทั้ง 6 รูป)
-// ==========================================
+// ==========================
+// 🖱️ SCROLL
+// ==========================
 slide.addEventListener('wheel', function(e) {
     e.preventDefault();
     if (isScrolling) return;
-    activateSelection();
-    isScrolling = true; 
+
+    isScrolling = true;
 
     const currentItems = document.querySelectorAll('.item');
 
     if (e.deltaY > 0) {
-        // เลื่อนลง: นำรูปแรก (index 0) ไปต่อท้ายสุด
-        slide.appendChild(currentItems[0]); 
+        slide.appendChild(currentItems[0]);
     } else {
-        // เลื่อนขึ้น: นำรูปท้ายสุด มาไว้หน้าสุด
-        slide.insertBefore(currentItems[currentItems.length - 1], currentItems[0]); 
+        slide.insertBefore(currentItems[currentItems.length - 1], currentItems[0]);
     }
+
+    // 👉 update active ใหม่
+    const newItems = document.querySelectorAll('.item');
+    newItems.forEach(i => i.classList.remove('active'));
+    if (newItems[1]) newItems[1].classList.add('active');
 
     updateCounter();
 
     setTimeout(() => {
-        isScrolling = false; 
-    }, 600); 
+        isScrolling = false;
+    }, 600);
 
 }, { passive: false });
