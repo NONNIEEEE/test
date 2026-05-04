@@ -470,3 +470,12 @@ body.not-selected .slide .item:nth-child(2) .content {
         border-radius: 12px;
     }
 }
+/* ✅ แสดง content ของตัวที่ active */
+.item.active .content {
+    display: block !important;
+}
+
+/* (ไม่ใช้ hint แล้ว) */
+.select-hint {
+    opacity: 0 !important;
+}
